@@ -1,0 +1,20 @@
+<div class="form-group">
+    <label>
+        Party Name:
+    </label>
+    <input type="text" ng-model="fcListAdd.fcList.name"/>
+
+</div>
+<div class="form-group">
+    <label>
+        Description:
+    </label>
+    <input type="text" ng-model="fcListAdd.fcList.description"/>
+
+</div>
+<div class="checkbox">
+    <label>
+        <input type="checkbox" ng-model="fcListAdd.fcList.public"/> Public Party?
+    </label>
+</div>
+<button ng-click="fcListAdd.submit()" class="btn btn-success">Add Party!</button>

@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <fieldset class="form-group">
+                    <label>Party name</label>
+                    <input ng-model="fcListDetails.fcList.name" ng-disabled="!fcListDetails.isLoggedIn">
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label>Description</label>
+                    <input ng-model="fcListDetails.fcList.description" ng-disabled="!fcListDetails.isLoggedIn">
+                </fieldset>
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="fcListDetails.fcList.public" ng-disabled="!fcListDetails.isLoggedIn" aria-label="Public Party?"/>
+                        Public Party?
+                    </label>
+                </div>
+
+                <button ng-click="fcListDetails.save()" type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <fc-list-uninvited flex list="fcListDetails.fcList" ng-show="fcListDetails.canInvite()"></fc-list-uninvited>
+        </div>
+    </div>
+</div>
+
+

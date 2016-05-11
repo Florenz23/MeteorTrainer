@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <fc-list-add-button ng-show="fcListsList.isLoggedIn"></fc-list-add-button>
+            <div ng-hide="fcListsList.isLoggedIn">
+                <i>Log in to create a fcList!</i>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>List of parties:</h2>
+
+            <form class="form-inline">
+                <div class="form-group">
+                    <input type="search" ng-model="fcListsList.searchText" placeholder="Search" class="form-control"/>
+                </div>
+                <fc-lists-sort on-change="fcListsList.sortChanged(sort)" property="name" order="1"></fc-lists-sort>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <ul class="parties">
+                <li dir-paginate="fcList in fcListsList.fcLists | itemsPerPage: fcListsList.perPage"
+                    total-items="fcListsList.fcListsCount">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h3 class="party-name">
+                                <a ui-sref="fcListsList({ listId: fcList._id })">{{fcList.name}}</a>
+                            </h3>
+                            <h3 class="party-name">
+                                <a ui-sref="fcListDetails({ fcListId: fcList._id })">Detail</a>
+                            </h3>
+                        </div>
+                        <div class="col-sm-4">
+                            <fc-list-remove list="fcList" ng-show="fcListsList.isOwner(fcList)"></fc-list-remove>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a ui-sref="trainer({ listId: fcList._id })">
+                                {{fcList.name}}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <fc-list-rsvps-list rsvps="fcList.rsvps"></fc-list-rsvps-list>
+
+                            <fc-list-unanswered list="fcList" ng-if="!fcList.public"></fc-list-unanswered>
+                            <div ng-if="fcList.public">
+                                Everyone is invited
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <fc-list-creator list="fcList"></fc-list-creator>
+                        </div>
+                        <div class="col-md-8">
+                            <fc-list-rsvp list="fcList" ng-show="fcListsList.isLoggedIn"></fc-list-rsvp>
+                            <div class="alert alert-warning" role="alert" ng-hide="fcListsList.isLoggedIn">
+                                <strong>Warning!</strong>
+                                <i>Sign in to RSVP for this fcList.</i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <dir-pagination-controls on-page-change="fcListsList.pageChanged(newPageNumber)"></dir-pagination-controls>
+        </div>
+    </div>
+</div>

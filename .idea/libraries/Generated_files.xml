@@ -1,0 +1,23 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/imports/ui/components/flashCard/displayFlashCard/displayFlashCard-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/client/main-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/client/main-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/flashCard/displayFlashCard/displayFlashCard-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/client/main-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/client/main-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

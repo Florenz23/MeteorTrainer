@@ -1,0 +1,21 @@
+    <div class="form-group">
+        <label>
+            Party Name:
+        </label>
+        <input id ="addFlashCard" type="text" ng-model="flashCardAdd.list.question"/>
+
+    </div>
+    <div class="form-group">
+        <label>
+            Description:
+        </label>
+        <input my-enter="flashCardAdd.submit()" type="text" ng-model="flashCardAdd.list.answer"/>
+
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" ng-model="flashCardAdd.list.public"/> Public Party?
+        </label>
+    </div>
+    <button type="submit" ng-click="flashCardAdd.submit()" class="btn btn-success">Add Party!</button>
+

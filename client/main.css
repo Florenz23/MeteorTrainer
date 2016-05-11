@@ -1,0 +1,47 @@
+body {
+  background-color: #f9f9f9;
+}
+socially {
+  display: block;
+}
+fcLists-list [ui-sref] {
+  cursor: pointer;
+}
+.show-detail-button {
+  float: right;
+}
+fcList-remove {
+  float: right;
+}
+.rsvp-sum {
+  width: 160px;
+}
+@media (min-width: 400px) {
+  .rsvp-sum {
+    float: right;
+  }
+}
+@media (max-width: 400px) {
+  .rsvp-sum {
+    margin: 0 auto;
+  }
+}
+.rsvp-sum > .rsvp-amount {
+  display: inline-block;
+  text-align: center;
+  width: 50px;
+}
+.rsvp-sum > .rsvp-amount > .amount {
+  font-weight: bold;
+  font-size: 20px;
+}
+.rsvp-sum > .rsvp-amount > .rsvp-title {
+  font-size: 11px;
+  color: #aaa;
+  text-transform: uppercase;
+}
+fcList-add-button .md-fab {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+}

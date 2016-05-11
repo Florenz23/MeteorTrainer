@@ -1,0 +1,16 @@
+<md-dialog aria-label="New fcList" ng-cloak>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>New fcList</h2>
+            <span flex></span>
+            <md-button ng-click="fcListAddModal.close()">
+                Close
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <div class="md-dialog-content">
+            <fc-list-add done="fcListAddModal.close()"></fc-list-add>
+        </div>
+    </md-dialog-content>
+</md-dialog>

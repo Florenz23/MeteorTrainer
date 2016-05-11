@@ -1,0 +1,1 @@
+{"version":3,"sources":["environment.js"],"names":[],"mappings":"AAAA,OAAO,OAAP,CAAe,YAAY;AACvB,YAAQ,GAAR,CAAY,QAAZ,GAAqB,8DAArB,CADuB;CAAZ,CAAf","file":"environment-compiled.js","sourcesContent":["Meteor.startup(function () {\n    process.env.MAIL_URL=\"smtp://580790.tubaf@gmail.com:23Safreiiy@smtp.gmail.com:465/\";\n})"]}

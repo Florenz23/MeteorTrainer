@@ -1,0 +1,23 @@
+import { Meteor } from 'meteor/meteor';
+import { Parties } from '../api/fcLists';
+
+Meteor.startup(() => {
+    if (Parties.find().count() === 0) {
+        const fcLists = [{
+            'name': 'Dubstep-Free Zone',
+            'description': 'Fast just got faster with Nexus S.'
+        }, {
+            'name': 'All dubstep all the time',
+            'description': 'Get it on!'
+        }, {
+            'name': 'Savage lounging',
+            'description': 'Leisure suit required. And only fiercest manners.'
+        }];
+
+        fcLists.forEach(fcList => {
+            Parties.insert(fcList);
+        });
+    }
+});
+
+//# sourceMappingURL=fixtures-compiled.js.map
