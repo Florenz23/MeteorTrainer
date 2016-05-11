@@ -9,7 +9,6 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <h2>List of parties:</h2>
 
             <form class="form-inline">
                 <div class="form-group">
@@ -20,8 +19,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
-            <ul class="parties">
+        <div class="col-md-12">
+            <ul class="fcLists">
                 <li dir-paginate="fcList in fcListsList.fcLists | itemsPerPage: fcListsList.perPage"
                     total-items="fcListsList.fcListsCount">
                     <div class="row">
@@ -45,7 +44,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-12">
                             <fc-list-rsvps-list rsvps="fcList.rsvps"></fc-list-rsvps-list>
 
                             <fc-list-unanswered list="fcList" ng-if="!fcList.public"></fc-list-unanswered>
@@ -55,10 +54,12 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-12">
                             <fc-list-creator list="fcList"></fc-list-creator>
                         </div>
-                        <div class="col-md-8">
+                    </div>
+                        <div class="row">
+                        <div class="col-md-12">
                             <fc-list-rsvp list="fcList" ng-show="fcListsList.isLoggedIn"></fc-list-rsvp>
                             <div class="alert alert-warning" role="alert" ng-hide="fcListsList.isLoggedIn">
                                 <strong>Warning!</strong>

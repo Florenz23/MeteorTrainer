@@ -49,7 +49,6 @@ export default angular.module(name, [
                         scope.$eval(attrs.myEnter);
                     });
                     event.preventDefault();
-                    jojo
                 }
             });
         };

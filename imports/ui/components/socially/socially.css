@@ -1,11 +1,32 @@
 socially {
   display: block;
 }
-fcLists-list [ui-sref] {
-  cursor: pointer;
+fc-lists-list {
+  display: block;
+  padding: 25px 0;
 }
-.show-detail-button {
-  float: right;
+fc-lists-list ul.fcLists {
+  padding-left: 0;
+  list-style-type: none;
+}
+fc-lists-list ul.fcLists > li {
+  padding: 15px;
+  background-color: #fff;
+  margin: 15px 0;
+  border: 3px solid #eaeaea;
+}
+fc-lists-list ul.fcLists > li .fcList-name {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+fc-lists-list ul.fcLists > li .fcList-name a {
+  text-decoration: none !important;
+  font-weight: 400;
+}
+fc-lists-list ul.fcLists > li .fcList-description {
+  font-weight: 300;
+  padding-left: 18px;
+  font-size: 14px;
 }
 fc-list-remove {
   float: right;

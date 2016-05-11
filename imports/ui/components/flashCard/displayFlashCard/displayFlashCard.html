@@ -2,21 +2,23 @@
 <div class="container">
     <ul>
         <li ng-repeat="flashCard in displayFlashCard.flashCards" ng-click="null" class="flash-card">
-            <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
-
             <div class="md-list-item-text" layout="column">
-                <a ui-sref="fcListsList({ flashCardId: flashCard._id })">
-                    <h3>{{flashCard.question}}</h3>
-                </a>
-
-                <p>PoolStatus:{{flashCard.poolStatus}}
-                    Rating:{{flashCard.rating}}
-                    Importance:{{flashCard.importance}}</p>
-                <h4>{{ flashCard.answer }}</h4>
-                <flash-card-remove flash="flashCard"></flash-card-remove>
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="form-group">
+                            <input class="form-control" type="text" value="{{flashCard.question}}">
+                            <input class="form-control" type="text" value="{{flashCard.answer}}">
+                        </div>
+                        <p>PoolStatus:{{flashCard.poolStatus}}
+                            Rating:{{flashCard.rating}}
+                            Importance:{{flashCard.importance}}</p>
+                    </div>
+                    <div class="col-md-2">
+                        <flash-card-remove flash="flashCard"></flash-card-remove>
+                    </div>
+                </div>
             </div>
         </li>
-
     </ul>
 </div>
 
