@@ -31,8 +31,17 @@ class Trainer {
         this.displayAnswer = false;
     };
 
-    seeAnswer = function () {
-        this.displayAnswer = true;
+    setEnterAction = function (userAnswer) {
+        console.log("jojo");
+        console.log(this.displayAnswer);
+        if (this.displayAnswer === true) {
+            console.log("deny");
+            return this.denyAnswer();
+        }
+        if (this.displayAnswer === false) {
+            console.log("check");
+            return this.checkAnswer(userAnswer);
+        }
     }
     checkAnswer = function (userAnswer) {
         if (Vocab.checkAnswer(userAnswer)) {
@@ -57,6 +66,7 @@ class Trainer {
     }
 
     proceedToNextFlashCard = function () {
+        $("#user_answer").val("");
         this.flashCard = Vocab.currentFlashCard;
         this.displayAnswer = false;
     };
@@ -70,17 +80,6 @@ class Trainer {
         Vocab.markForLater(word);
         this.proceedToNextFlashCard();
     }
-    keyUpCheckAnswer = function (userAnswer) {
-        event.preventDefault();
-        if (event.keyCode == 13) {
-            console.log("jojo");
-            console.log(userAnswer);
-            this.checkAnswer(userAnswer);
-
-        }
-        console.log("jojo");
-    }
-
 }
 
 const name = 'trainer';
@@ -95,6 +94,19 @@ export default angular.module(name, [
     controllerAs: name,
     controller: Trainer
 })
+    .directive('myTab', function () {
+        return function (scope, element, attrs) {
+            element.unbind("keydown keypress");
+            element.bind("keydown keypress", function (event) {
+                if (event.which === 9) {
+                    scope.$apply(function () {
+                        scope.$eval(attrs.myEnter);
+                    });
+                    event.preventDefault();
+                }
+            });
+        };
+    })
     .config(config);
 
 function config($stateProvider) {

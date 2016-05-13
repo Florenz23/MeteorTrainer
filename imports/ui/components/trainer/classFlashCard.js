@@ -36,7 +36,6 @@ export class ClassFlashCard {
         if (!isNaN(parseFloat(flashCardObject.rating))) {
             this.rating = flashCardObject.rating;
         } else {
-            console.log("jo");
             this.rating = 0;
         }
     }
@@ -113,8 +112,6 @@ export class ClassFlashCard {
     }
     calculateImportance = function () {
         var passed_time = (new Date().getTime() - this.lastRevision ) / (3600 * 24 * 1000); //in Tagen (!)
-        console.log("passed_time"+passed_time);
-        console.log("rating"+this.rating);
         this.importance = passed_time - (0.17 * Math.exp(1.4 * this.rating - 0.17));
         //this.importance = Math.round(this.importance).toFixed(6);
     }

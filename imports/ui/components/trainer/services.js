@@ -13,7 +13,6 @@ class ClassVocab {
             flashCards.push(obj);
         }
         flashCards = flashCards.sort(this.sortByImportance);
-        console.log(flashCards);
         this.dbFlashCards = flashCards;
     }
     iniTrainer = function () {
@@ -92,7 +91,6 @@ class ClassVocab {
         if (flashCard.poolStatus == 1) {
             this.trashFlashCard(flashCard)
             flashCard.markAsCorrectAnswered();
-            console.log(flashCard);
         }
         if (flashCard.poolStatus == 0) {
             this.markForReview(flashCard)

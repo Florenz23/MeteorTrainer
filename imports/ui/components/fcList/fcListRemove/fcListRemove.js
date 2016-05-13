@@ -7,7 +7,6 @@ import { Parties } from '../../../../api/fcLists';
 class FcListRemove {
   remove() {
     if (this.list) {
-        console.log("jojo");
       Parties.remove(this.list._id);
     }
   }

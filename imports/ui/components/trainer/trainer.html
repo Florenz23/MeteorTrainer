@@ -10,7 +10,8 @@
             <div class="trainer-answer">
                 <div class="form-group">
             <textarea id="user_answer" ng-model="trainer.userAnswer"
-                      ui-event="{keyup:'trainer.keyUpCheckAnswer(trainer.userAnswer)'}"
+                     my-enter="trainer.setEnterAction(trainer.userAnswer)"
+                      my-tab="trainer.acceptAnswer()"
                       class="trainer-answer-textarea form-control"
                       rows="6"></textarea>
                 </div>

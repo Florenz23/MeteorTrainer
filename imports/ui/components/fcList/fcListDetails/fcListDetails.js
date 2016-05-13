@@ -16,8 +16,6 @@ class PartyDetails {
         this.fcListId = $stateParams.fcListId;
         this.subscribe('fcLists');
         this.subscribe('users');
-        console.log("listId");
-        console.log(this.fcListId);
         this.helpers({
             fcList() {
                 return Parties.findOne({

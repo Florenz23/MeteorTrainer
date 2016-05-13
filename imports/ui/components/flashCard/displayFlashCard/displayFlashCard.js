@@ -12,7 +12,6 @@ class DisplayFlashCard {
     constructor($scope, $reactive, $stateParams) {
         'ngInject';
         this.listId = $stateParams.listId;
-        console.log(this.listId);
         $reactive(this).attach($scope);
         this.subscribe('flashCards');
         this.helpers({
