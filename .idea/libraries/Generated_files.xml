@@ -2,21 +2,27 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/imports/ui/components/flashCard/displayFlashCard/displayFlashCard-compiled-compiled.js" />
         <item url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/flashCard/displayFlashCard/displayFlashCard-compiled-compiled.js" />
         <item url="file://$PROJECT_DIR$/client/main-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/socially/editor-compiled.js" />
         <item url="file://$PROJECT_DIR$/client/main-compiled.js" />
         <item url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/edior/editor-compiled.js" />
         <item url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/socially/socially-compiled-compiled.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/imports/ui/components/flashCard/displayFlashCard/displayFlashCard-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/client/main-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/socially/editor-compiled.js" />
       <root url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/client/main-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/editor/editor-compiled.js" />
       <root url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/socially/socially-compiled-compiled.js" />
     </CLASSES>
     <SOURCES />
   </library>

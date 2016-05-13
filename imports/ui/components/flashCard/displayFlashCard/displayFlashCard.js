@@ -9,15 +9,16 @@ import { name as FlashCardRemove } from '../flashCardRemove/flashCardRemove';
 
 
 class DisplayFlashCard {
-    constructor($scope, $reactive,$stateParams) {
+    constructor($scope, $reactive, $stateParams) {
         'ngInject';
         this.listId = $stateParams.listId;
+        console.log(this.listId);
         $reactive(this).attach($scope);
         this.subscribe('flashCards');
         this.helpers({
             flashCards() {
                 const selector = {
-                    listId : $stateParams.listId
+                    listId: $stateParams.listId
                 };
                 var flashCards = FlashCards.find(selector);
                 return flashCards;
@@ -44,7 +45,7 @@ export default angular.module(name, [
 function config($stateProvider) {
     'ngInject';
     $stateProvider
-        .state('fcListsList', {
+        .state('home.fcListsList', {
             url: '/lists/:listId',
             template: '<display-flash-card></display-flash-card>'
         });

@@ -23,7 +23,8 @@ class Trainer {
             }
         });
     }
-    iniTrainer = function(){
+
+    iniTrainer = function () {
         Vocab.chargeVocs(this.flashCards);
         Vocab.iniTrainer();
         this.flashCard = Vocab.currentFlashCard;

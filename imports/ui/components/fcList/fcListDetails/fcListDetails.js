@@ -78,7 +78,7 @@ export default angular.module(name, [
 function config($stateProvider) {
     'ngInject';
 
-    $stateProvider.state('fcListDetails', {
+    $stateProvider.state('home.fcListDetails', {
         url: '/fcLists/:fcListId',
         template: '<fc-list-details></fc-list-details>',
         resolve: {

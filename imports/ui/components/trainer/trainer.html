@@ -1,34 +1,46 @@
+
+<button ng-click="trainer.iniTrainer()" class=" btn btn-lg btn-info">Lernen</button>
 <div class="container">
     <h1><a href="#/">Trainer</a></h1>
-    <button ng-click="trainer.iniTrainer()" class=" btn btn-lg btn-info btn-block">Lernen</button>
-    <div class="trainer-main well col-lg-10">
-        <div class="trainer-question">
-            <h2>{{trainer.flashCard.question}}</h2>
-        </div>
-        <div class="trainer-answer">
-            <div class="form-group">
-            <textarea id="user_answer" ng-model="trainer.userAnswer" ui-event="{keyup:'trainer.keyUpCheckAnswer(trainer.userAnswer)'}" class="trainer-answer-textarea form-control"
+    <div class="row">
+        <div class="trainer-main well col-lg-10">
+            <div class="trainer-question">
+                <h2>{{trainer.flashCard.question}}</h2>
+            </div>
+            <div class="trainer-answer">
+                <div class="form-group">
+            <textarea id="user_answer" ng-model="trainer.userAnswer"
+                      ui-event="{keyup:'trainer.keyUpCheckAnswer(trainer.userAnswer)'}"
+                      class="trainer-answer-textarea form-control"
                       rows="6"></textarea>
+                </div>
+                <div class="row">
+                    <div ng-show="trainer.displayAnswer" class="form-group">
+                        <div class="col-lg-offset-3 col-lg-3">
+                            <button ng-click="trainer.acceptAnswer()" class=" btn btn-lg btn-info btn-block">Accept
+                            </button>
+                        </div>
+                        <div class=" col-lg-3">
+                            <button ng-click="trainer.denyAnswer()" class=" btn btn-lg btn-info btn-block">Next</button>
+                        </div>
+                    </div>
+                    <div ng-hide="trainer.displayAnswer" class="form-group">
+                        <div class="col-lg-offset-3 col-lg-3">
+                            <button ng-click="trainer.showAnswer()" class=" btn btn-lg btn-info btn-block">Antwort
+                                zeigen
+                            </button>
+                        </div>
+                        <div class=" col-lg-3">
+                            <button ng-click="trainer.checkAnswer(trainer.userAnswer)"
+                                    class=" btn btn-lg btn-info btn-block">Check
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div ng-show="trainer.displayAnswer" class="form-group">
-                <div class="col-lg-offset-3 col-lg-3">
-                    <button ng-click="trainer.acceptAnswer()" class=" btn btn-lg btn-info btn-block">Accept</button>
-                </div>
-                <div class=" col-lg-3">
-                    <button ng-click="trainer.denyAnswer()" class=" btn btn-lg btn-info btn-block">Next</button>
-                </div>
+            <div class="container trainer-answer-correct">
+                <p ng-show="trainer.displayAnswer">{{ trainer.flashCard.answer }}</p>
             </div>
-            <div ng-hide="trainer.displayAnswer" class="form-group">
-                <div class="col-lg-offset-3 col-lg-3">
-                    <button ng-click="trainer.showAnswer()" class=" btn btn-lg btn-info btn-block">Antwort zeigen</button>
-                </div>
-                <div class=" col-lg-3">
-                    <button ng-click="trainer.checkAnswer(trainer.userAnswer)" class=" btn btn-lg btn-info btn-block">Check</button>
-                </div>
-            </div>
-        </div>
-        <div class="container trainer-answer-correct">
-            <p ng-show="trainer.displayAnswer">{{ trainer.flashCard.answer }}</p>
         </div>
     </div>
 </div>

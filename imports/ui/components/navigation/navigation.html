@@ -1,6 +1,7 @@
-<div class="fluid-container">
-    <div class="navbar-header">
-        <a href="/parties" class="navbar-brand">Socially</a>
-        <login-buttons class="navbar-brand"></login-buttons>
-    </div>
-</div>
+<ul class="nav nav-tabs" style="margin-bottom: 20px">
+    <li ng-class="{ active: isActiveTab('Home') }"><a ui-sref="home">Home</a>
+    </li>
+    <li ng-class="{ active: isActiveTab('Trainer') }"><a href="#/trainer">Trainer</a>
+    </li>
+    <li><login-buttons class="navbar-brand"></login-buttons></li>
+</ul>
