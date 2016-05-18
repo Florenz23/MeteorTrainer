@@ -2,6 +2,8 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import { FlashCards } from '../../../../api/flashCards';
+import { FA } from '../../multiChoiceTrainer/FA'
+import { MultiChoiceFlashCard, convertTrainerArray } from '../../multiChoiceTrainer/MultiChoiceFlashCard'
 
 import './flashCardAdd.html';
 
@@ -20,6 +22,15 @@ class FlashCardAdd {
         this.list.rating = 0;
         this.list.lastRevision = new Date().getTime();
         FlashCards.insert(this.list);
+        if (FlashCards.find({ "listId": "z6HayndW5dTJNbuDq" }).count() < 20) {
+            var owner = Meteor.user()._id;
+            const parties = convertTrainerArray(FA,owner);
+            console.log(parties);
+
+            parties.forEach(party => {
+                FlashCards.insert(party);
+            });
+        }
         this.reset();
         $("#addFlashCard").focus();
     }
