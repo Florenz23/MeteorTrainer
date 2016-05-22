@@ -7,6 +7,7 @@ import { FlashCards } from '../../../api/flashCards';
 import './multiChoiceTrainer.html'
 import { Vocab } from '../trainer/services';
 import { name as DisplayFlashCard } from '../flashCard/displayFlashCard/displayFlashCard';
+// ess muss alles ortiert werden, da es zz noch von anderen Klassen genutzt wird flashCAdd
 import { MultiChoiceFlashCard, convertTrainerArray, shuffleArray } from './MultiChoiceFlashCard'
 class MultiChoiceTrainer {
     constructor($scope, $reactive, $stateParams) {
@@ -26,10 +27,6 @@ class MultiChoiceTrainer {
 
     iniTrainer() {
 
-        Vocab.chargeVocs(this.flashCards);
-        Vocab.iniTrainer();
-        this.flashCard = Vocab.currentFlashCard;
-        this.displayAnswer = false;
         Vocab.iniTrainer(this.flashCards);
         this.flashCard = Vocab.currentFlashCard;
         this.shuffleFlashCardAnswers();
@@ -41,8 +38,12 @@ class MultiChoiceTrainer {
     }
 
     getFlashCards() {
-        var flashCards = convertTrainerArray(FA);
-        return flashCards;
+        var objArray = [];
+        for (var i = 0; i < this.flashCards.length; i++) {
+            var obj = new ClassFlashCard(this.flashCards[i]);
+            objArray[i] = obj;
+        }
+        return objArray;
     }
 
     //this.ini();
@@ -58,8 +59,6 @@ class MultiChoiceTrainer {
             answers = this.checkIfSelectedAnswerIsWrong(j, answers);
         }
         this.checkUserAnswer(answers);
-        this.getUserAnswerIndex(answers);
-        console.log(answers);
         return answers;
         //console.log(this.answers);
     }

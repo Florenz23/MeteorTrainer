@@ -20,14 +20,14 @@
                     <div class="input-group input-radio">
                         <label id="labelId{{$index}}" class="isCorrect_{{answer.selected}}"
                                for="quest_{{$parent.$index}}_answer_{{$index}}">
-                            <input ng-click="showResult()" type="radio" id="quest_{{$parent.$index}}_answer_{{$index}}"
-                                   ng-model="answers[0]" value="{{ answer.value }}"
+                            <input ng-click="multiChoiceTrainer.showResult()" type="radio" id="quest_{{$parent.$index}}_answer_{{$index}}"
+                                   ng-model="multiChoiceTrainer.answers[0]" value="{{ answer.value }}"
                                    name="quest_{{$parent.$index}}_answers"/>{{ answer.value }}</label>
                     </div>
                 </div>
 
                 <div class="next-action clearfix">
-                    <button ng-click="proceedToNextFlashCard()" class="btn btn-success pull-right blue-btn">Next <i
+                    <button ng-click="multiChoiceTrainer.proceedToNextFlashCard()" class="btn btn-success pull-right blue-btn">Next <i
                             class="icon-chevron-right"></i></button>
                 </div>
                 <div>

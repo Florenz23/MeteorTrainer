@@ -1,39 +1,42 @@
 import { ClassFlashCard } from './classFlashCard'
 
-var pool_size = 4;
-var review_interval = 4;
+var pool_size = 5;
+var review_interval = 5;
 
-class ClassVocab {
-    constructor() {}
-
-    chargeVocs = function (dbFlashCards) {
-        var flashCards = new Array();
-        for (var i = 0; i < dbFlashCards.length; i++) {
-            var obj = new ClassFlashCard(dbFlashCards[i]);
-            flashCards.push(obj);
-        }
-        flashCards = flashCards.sort(this.sortByImportance);
-        this.dbFlashCards = flashCards;
-    }
-    iniTrainer = function () {
+function Vocab() {
+    this.iniTrainer = function (controllerFlashCards){
+        this.currentFlashCard = null;
+        this.deliverFlashCardsFromController(controllerFlashCards);
         this.currentFlashCard = _.first(this.flashCards());
         this.poolSize = pool_size;
         this.reviewIntervall = review_interval;
         this.displayAnswer = false;
+    };
+
+    this.deliverFlashCardsFromController = function(flashCards){
+        var objArray = this.createObjectArray(flashCards);
+        this.controllerFlashCards = objArray;
     }
-    sortByImportance = function (a, b) {
+    this.createObjectArray = function(flashCards){
+        var objArray = [];
+        for (var i = 0; i < flashCards.length; i++) {
+            var obj = new ClassFlashCard(flashCards[i]);
+            objArray[i] = obj;
+        }
+        return objArray;
+    }
+    this.sortByImportance = function (a, b) {
         return parseFloat(b.importance) - parseFloat(a.importance);
     }
-
-    flashCards = function () {
+    this.flashCards = function () {
         return this._flashCards || this.getFlashCards();
-    }
-    getFlashCards = function () {
-        this._flashCards = this.dbFlashCards;
+    };
+    this.getFlashCards = function () {
+        this._flashCards = this.controllerFlashCards;
         return this._flashCards;
-    }
-// grab the next flashCard in the list or wrap around to the start
-    nextFlashCard = function () {
+    };
+    // grab the next flashCard in the list or wrap around to the start
+    this.nextFlashCard = function () {
         if (_.last(this.flashCards()).question == this.currentFlashCard.question) {
             this.currentFlashCard = _.first(this.flashCards());
         } else {
@@ -42,40 +45,40 @@ class ClassVocab {
         }
 
         return this.currentFlashCard;
-    }
-    wordByName = function (name) {
+    };
+    this.wordByName = function (name) {
         return _.detect(this.flashCards(), function (flashCard) {
             return flashCard.question == name;
         });
-    }
-    trashFlashCard = function () {
+    };
+    this.trashFlashCard = function () {
         var flashCard = this.currentFlashCard;
         this._flashCards.splice(_.indexOf(this._flashCards, flashCard), 1);
         this.currentFlashCard = _.first(this.flashCards());
-    }
-// simply move flashCard to end of the list
-    markForLater = function (flashCard) {
+    };
+    // simply move flashCard to end of the list
+    this.markForLater = function (flashCard) {
         var flashCards = this.flashCards();
         flashCards.splice(_.indexOf(flashCards, flashCard), 1);
         flashCards.push(flashCard);
-    }
-// place the flashCard in the middle of the list
-    markForSoon = function () {
+    };
+    // place the flashCard in the middle of the list
+    this.markForSoon = function () {
         var flashCards = this.flashCards();
         var flashCard = this.currentFlashCard;
         flashCards.splice(_.indexOf(flashCards, flashCard), 1);
         flashCards.splice(parseInt(this.poolSize), 0, flashCard);
         this.currentFlashCard = _.first(this.flashCards());
-    }
-    markForReview = function () {
+    };
+    this.markForReview = function () {
         var flashCard = this.currentFlashCard;
         var flashCards = this.flashCards();
         var reviewPosition = this.poolSize + this.reviewIntervall;
         flashCards.splice(_.indexOf(flashCards, flashCard), 1);
         flashCards.splice(parseInt(reviewPosition), 0, flashCard);
         this.currentFlashCard = _.first(this.flashCards());
-    }
-    checkAnswer = function (userAnswer) {
+    };
+    this.checkAnswer = function (userAnswer) {
         var flashCard = this.currentFlashCard;
         var displayAnswer = false;
         if (flashCard.answer == userAnswer) {
@@ -85,8 +88,8 @@ class ClassVocab {
             displayAnswer = true;
         }
         return displayAnswer;
-    }
-    markAnswerAsCorrect = function () {
+    };
+    this.markAnswerAsCorrect = function () {
         var flashCard = this.currentFlashCard;
         if (flashCard.poolStatus == 1) {
             this.trashFlashCard(flashCard)
@@ -101,15 +104,20 @@ class ClassVocab {
             flashCard.markAsCorrectAnswered();
         }
 
-    }
-    markAnswerAsWrong = function () {
+    };
+    this.markAnswerAsWrong = function () {
         var flashCard = this.currentFlashCard;
         flashCard.markAsWrongAnswered();
         this.markForSoon(flashCard);
     }
+    this.setPoolsize = function(poolsize){
+        this.poolSize = poolsize;
+    }
+    this.setReviewIntervall = function(intervall){
+        this.reviewIntervall = intervall;
+    }
 }
-
-export const Vocab = new ClassVocab();
+export var Vocab = new Vocab();
 
 
 

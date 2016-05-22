@@ -35,7 +35,7 @@ function convertTrainerArray(trainerArray,owner){
     var objArray = [];
     var counter = "1001";
     //for (var i = 0; i < trainerArray.length - 1002; i++) {
-        for (var i = 0; i < 2; i++) {
+        for (var i = 0; i < 10; i++) {
         counter = parseInt(counter);
         counter++;
         counter = counter.toString();

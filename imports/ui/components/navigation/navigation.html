@@ -1,9 +1,9 @@
-<ul class="nav nav-tabs" style="margin-bottom: 20px">
-    <li ng-class="{ active: isActiveTab('Home') }"><a ui-sref="home">Home</a>
+<ul class="nav nav-tabs"  role="tablist">
+    <li  class="nav-item" ng-class="{ active: isActiveTab('Home') }"><a ui-sref="home">Home</a>
     </li>
-    <li ng-class="{ active: isActiveTab('Trainer') }"><a href="#/trainer">Trainer</a>
+    <li class="nav-item" ng-class="{ active: isActiveTab('Trainer') }"><a href="#/trainer">Trainer</a>
     </li>
-    <li ng-class="{ active: isActiveTab('Boot') }"><a ui-sref="boot">Boot</a>
+    <li class="nav-item" ng-class="{ active: isActiveTab('Boot') }"><a ui-sref="boot">Boot</a>
     </li>
-    <li><login-buttons class="navbar-brand"></login-buttons></li>
+    <li class="nav-item" ><login-buttons class="navbar-brand"></login-buttons></li>
 </ul>

@@ -2,33 +2,66 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap/grunt/change-version-compiled.js" />
         <item url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled-compiled-compiled.js" />
         <item url="file://$PROJECT_DIR$/imports/ui/components/flashCard/displayFlashCard/displayFlashCard-compiled-compiled.js" />
-        <item url="file://$PROJECT_DIR$/imports/ui/components/multiChoiceTrainer/multiChoiceTrainer-compiled.js" />
-        <item url="file://$PROJECT_DIR$/client/main-compiled-compiled.js" />
-        <item url="file://$PROJECT_DIR$/imports/ui/components/multiChoiceTrainer/MultiChoiceFlashCard-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap/grunt/bs-commonjs-generator-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap/Gruntfile-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap.min-compiled.js" />
         <item url="file://$PROJECT_DIR$/client/main-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/popover-compiled.js" />
+        <item url="file://$PROJECT_DIR$/client/main-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/modal-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/collapse-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/dropdown-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/carousel-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/tooltip-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/scrollspy-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/npm-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/tab-compiled.js" />
         <item url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/alert-compiled.js" />
         <item url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/button-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/util-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/multiChoiceTrainer/multiChoiceTrainer-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/multiChoiceTrainer/MultiChoiceFlashCard-compiled.js" />
         <item url="file://$PROJECT_DIR$/imports/ui/components/multiChoiceTrainer/FA-compiled.js" />
-        <item url="file://$PROJECT_DIR$/server/startup-compiled.js" />
         <item url="file://$PROJECT_DIR$/imports/ui/components/socially/socially-compiled-compiled.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/imports/ui/components/socially/editor-compiled.js" />
       <root url="file://$PROJECT_DIR$/server/startup-compiled.js" />
-      <root url="file://$PROJECT_DIR$/imports/ui/components/multiChoiceTrainer/multiChoiceTrainer-compiled.js" />
+      <root url="file://$PROJECT_DIR$/server/startup-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap/grunt/change-version-compiled.js" />
       <root url="file://$PROJECT_DIR$/imports/ui/components/flashCard/displayFlashCard/displayFlashCard-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled-compiled-compiled.js" />
-      <root url="file://$PROJECT_DIR$/client/main-compiled-compiled.js" />
-      <root url="file://$PROJECT_DIR$/imports/ui/components/multiChoiceTrainer/MultiChoiceFlashCard-compiled.js" />
-      <root url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap/grunt/bs-commonjs-generator-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap/Gruntfile-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap.min-compiled.js" />
       <root url="file://$PROJECT_DIR$/client/main-compiled.js" />
       <root url="file://$PROJECT_DIR$/imports/ui/components/editor/editor-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/popover-compiled.js" />
+      <root url="file://$PROJECT_DIR$/client/main-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/modal-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/collapse-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/dropdown-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/carousel-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/tooltip-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/scrollspy-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/npm-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/tab-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/alert-compiled.js" />
       <root url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/button-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/util-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/multiChoiceTrainer/multiChoiceTrainer-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/multiChoiceTrainer/MultiChoiceFlashCard-compiled.js" />
       <root url="file://$PROJECT_DIR$/imports/ui/components/multiChoiceTrainer/FA-compiled.js" />
-      <root url="file://$PROJECT_DIR$/server/startup-compiled.js" />
       <root url="file://$PROJECT_DIR$/imports/ui/components/socially/socially-compiled-compiled.js" />
     </CLASSES>
     <SOURCES />

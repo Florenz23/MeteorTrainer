@@ -4,11 +4,7 @@ import { Meteor } from 'meteor/meteor';
 
 import { name as Socially } from '../imports/ui/components/socially/socially';
 
-function onReady() {
-    angular.bootstrap(document, [Socially], {
-        strictDi: true
-    });
-}
+function onReady() {}
 
 if (Meteor.isCordova) {
     angular.element(document).on('deviceready', onReady);
