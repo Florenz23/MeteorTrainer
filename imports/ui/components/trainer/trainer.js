@@ -7,6 +7,7 @@ import { FlashCards } from '../../../api/flashCards';
 import './trainer.html'
 import { Vocab } from './services';
 import { name as DisplayFlashCard } from '../flashCard/displayFlashCard/displayFlashCard';
+import { MultiChoiceFlashCard, convertTrainerArray, shuffleArray } from '../multiChoiceTrainer/MultiChoiceFlashCard'
 
 class Trainer {
     constructor($scope, $reactive, $stateParams) {
@@ -25,8 +26,14 @@ class Trainer {
     }
 
     iniTrainer = function () {
-        Vocab.chargeVocs(this.flashCards);
-        Vocab.iniTrainer();
+        var flashCards = this.flashCards;
+        Vocab.iniTrainer(flashCards);
+        this.flashCard = Vocab.currentFlashCard;
+        this.displayAnswer = false;
+    };
+    iniTrainerShuffle = function () {
+        var flashCards = shuffleArray(this.flashCards);
+        Vocab.iniTrainer(flashCards);
         this.flashCard = Vocab.currentFlashCard;
         this.displayAnswer = false;
     };

@@ -104,8 +104,25 @@ fc-list-add-button .md-fab {
   border-radius: 3px;
 }
 .isCorrect_true {
-  background-color: green;
+  background-color: #dff0d8;
+  cursor: pointer;
 }
 .isCorrect_false {
   background-color: red;
+}
+.multi-choice-answer {
+  cursor: pointer;
+}
+.multi-choice-answer:hover {
+  background-color: #ebfffc;
+}
+.question h3 {
+  color: #3498db;
+  padding-bottom: 15px;
+  font-size: 19px;
+  font-weight: 500;
+}
+.repeat-wrap {
+  padding: 1px 20px 2px 25px;
+  border-left: 5px solid transparent;
 }

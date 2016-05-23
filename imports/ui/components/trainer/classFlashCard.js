@@ -6,7 +6,7 @@ import { FlashCards } from '../../../api/flashCards';
 
 
 export function ClassFlashCard(flashCardObject) {
-    this.init = function(){
+    this.init = function () {
         this.setId(flashCardObject);
         this.question = flashCardObject.question;
         this.setAnswer(flashCardObject);
@@ -20,33 +20,33 @@ export function ClassFlashCard(flashCardObject) {
     };
 
 
-    this.setId = function(object){
-        if (object._id){
-            this.id= object._id;
+    this.setId = function (object) {
+        if (object._id) {
+            this._id = object._id;
         }
-        if (object.id){
-            this.id= object.id;
+        if (object.id) {
+            this.id = object.id;
         }
     };
-    this.setAnswer = function(object){
-        if (object.answer){
+    this.setAnswer = function (object) {
+        if (object.answer) {
             this.answer = object.answer;
         } else {
             this.answer = false;
         }
     };
-    this.setAnswers = function(object){
-        if (object.answers){
+    this.setAnswers = function (object) {
+        if (object.answers) {
             this.answers = object.answers;
         } else {
             this.answers = false;
         }
     };
-    this.setLastRevision = function(object){
-        if (object.lastRevision){
+    this.setLastRevision = function (object) {
+        if (object.lastRevision) {
             this.lastRevision = object.lastRevision;
         } else {
-            this.lastRevision = false;
+            this.lastRevision = new Date().getTime();
         }
     };
 
@@ -107,7 +107,7 @@ export function ClassFlashCard(flashCardObject) {
         this.wrong++;
     };
     this.calculateRating = function (correct) {
-        if(this.poolStatus != 1){
+        if (this.poolStatus != 1) {
             return;
         }
         var rating = this.rating;
@@ -129,8 +129,9 @@ export function ClassFlashCard(flashCardObject) {
         //this.importance = Math.round(this.importance).toFixed(6);
     }
     this.updateDbFlashCard = function () {
+        console.log(this);
         FlashCards.update({
-            _id: this.id
+            _id: this._id
         }, {
             $set: {
                 right: this.right,
@@ -148,5 +149,5 @@ export function ClassFlashCard(flashCardObject) {
         });
     }
     this.init();
-}
 
+}

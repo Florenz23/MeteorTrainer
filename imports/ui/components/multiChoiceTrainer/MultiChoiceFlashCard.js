@@ -25,6 +25,10 @@ function MultiChoiceFlashCard(arrayValue,counter,owner) {
         this.setId(counter);
         this.owner = owner;
         this.listId = "z6HayndW5dTJNbuDq";
+        this.right = 0;
+        this.wrong = 0;
+        this.rating = 0;
+        this.lastRevision = false;
     };
     this.ini(arrayValue,counter,owner);
 
@@ -34,8 +38,8 @@ function MultiChoiceFlashCard(arrayValue,counter,owner) {
 function convertTrainerArray(trainerArray,owner){
     var objArray = [];
     var counter = "1001";
-    //for (var i = 0; i < trainerArray.length - 1002; i++) {
-        for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < trainerArray.length - 1002; i++) {
+    //    for (var i = 0; i < 10; i++) {
         counter = parseInt(counter);
         counter++;
         counter = counter.toString();

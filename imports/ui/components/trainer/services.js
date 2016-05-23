@@ -12,6 +12,9 @@ function Vocab() {
         this.reviewIntervall = review_interval;
         this.displayAnswer = false;
     };
+    this.sortByImportance = function (a, b) {
+        return parseFloat(b.importance) - parseFloat(a.importance);
+    }
 
     this.deliverFlashCardsFromController = function(flashCards){
         var objArray = this.createObjectArray(flashCards);
@@ -23,6 +26,7 @@ function Vocab() {
             var obj = new ClassFlashCard(flashCards[i]);
             objArray[i] = obj;
         }
+        objArray = objArray.sort(this.sortByImportance);
         return objArray;
     }
     this.sortByImportance = function (a, b) {
