@@ -84,21 +84,23 @@ export function ClassFlashCard(flashCardObject) {
     };
 
     this.markAsCorrectAnswered = function () {
+        this.updateRight();
+        this.updateData(1);
         if (this.poolStatus <= 0) {
             this.poolStatus++;
         }
-        this.updateRight();
-        this.updateData(1);
     };
     this.markAsWrongAnswered = function () {
-        this.poolStatus = -1;
         this.updateWrong();
         this.updateData(0);
+        this.poolStatus = -1;
     };
     this.updateData = function (check) {
-        this.calculateRating(check);
-        this.calculateImportance();
-        this.updateDbFlashCard();
+        if (this.poolStatus == 1){
+            this.calculateRating(check);
+            this.calculateImportance();
+        }
+        //this.updateDbFlashCard();
     };
     this.updateRight = function () {
         this.right++;

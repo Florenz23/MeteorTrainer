@@ -32,10 +32,8 @@ class Trainer {
         this.displayAnswer = false;
     };
     iniTrainerShuffle = function () {
-        var flashCards = shuffleArray(this.flashCards);
-        Vocab.iniTrainer(flashCards);
-        this.flashCard = Vocab.currentFlashCard;
-        this.displayAnswer = false;
+        var flashCards = shuffleArray(Vocab._flashCards);
+        Vocab._flashCards = flashCards;
     };
 
     setEnterAction = function (userAnswer) {
