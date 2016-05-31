@@ -34,6 +34,7 @@ class Trainer {
     iniTrainerShuffle = function () {
         var flashCards = shuffleArray(Vocab._flashCards);
         Vocab._flashCards = flashCards;
+        console.log(new Date().getTime());
     };
 
     setEnterAction = function (userAnswer) {

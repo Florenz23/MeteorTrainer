@@ -46,7 +46,7 @@ export function ClassFlashCard(flashCardObject) {
         if (object.lastRevision) {
             this.lastRevision = object.lastRevision;
         } else {
-            this.lastRevision = new Date().getTime();
+            this.lastRevision = "notLearned";
         }
     };
 
@@ -96,11 +96,17 @@ export function ClassFlashCard(flashCardObject) {
         this.poolStatus = -1;
     };
     this.updateData = function (check) {
+        this.correctLastRevision();
         if (this.poolStatus == 1){
             this.calculateRating(check);
-            this.calculateImportance();
+            this.setImportance();
         }
         //this.updateDbFlashCard();
+    };
+    this.correctLastRevision = function(){
+        if (this.lastRevision == "notLearned"){
+            this.lastRevision = new Date().getTime();
+        }
     };
     this.updateRight = function () {
         this.right++;
@@ -125,11 +131,23 @@ export function ClassFlashCard(flashCardObject) {
         //this.rating = Math.round(this.rating).toFixed(2);
         return rating;
     };
+    this.setImportance = function(){
+        if (this.lastRevision == "notLearned"){
+            this.setNotLearnedImportance();
+        }  else {
+            this.calculateImportance();
+        };
+    }
     this.calculateImportance = function () {
         var passed_time = (new Date().getTime() - this.lastRevision ) / (3600 * 24 * 1000); //in Tagen (!)
         this.importance = passed_time - (0.17 * Math.exp(1.4 * this.rating - 0.17));
         //this.importance = Math.round(this.importance).toFixed(6);
-    }
+    };
+    this.setNotLearnedImportance = function(){
+        if (this.lastRevision == "notLearned"){
+            this.importance = 0;
+        };
+    };
     this.updateDbFlashCard = function () {
         console.log(this);
         FlashCards.update({

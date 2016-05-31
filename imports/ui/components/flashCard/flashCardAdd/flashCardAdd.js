@@ -20,7 +20,7 @@ class FlashCardAdd {
         this.list.right = 0;
         this.list.wrong = 0;
         this.list.rating = 0;
-        this.list.lastRevision = new Date().getTime();
+        this.list.lastRevision = "notLearned";
         FlashCards.insert(this.list);
         if (FlashCards.find({ "listId": "z6HayndW5dTJNbuDq" }).count() < 20) {
             var owner = Meteor.user()._id;
