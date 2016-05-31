@@ -101,7 +101,7 @@ export function ClassFlashCard(flashCardObject) {
             this.calculateRating(check);
             this.setImportance();
         }
-        //this.updateDbFlashCard();
+        this.updateDbFlashCard();
     };
     this.correctLastRevision = function(){
         if (this.lastRevision == "notLearned"){

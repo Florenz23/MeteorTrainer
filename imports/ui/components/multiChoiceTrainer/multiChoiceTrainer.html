@@ -1,54 +1,37 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-lg-2">
             <button ng-click="multiChoiceTrainer.ini()" class=" btn btn-lg btn-info">Lernen</button>
         </div>
-        <div class="col-md-8">
+        <div class="col-lg-8">
             <header>
                 <div class="quiz-title">
-                    <img src="check/boot/images/g{{multiChoiceTrainer.flashCard.id}}f.png" err-src="http://google.com/favicon.ico"/>
+                    <img src="check/boot/images/g{{multiChoiceTrainer.flashCard.id}}f.png"
+                         err-src="http://google.com/favicon.ico" />
                 </div>
-
             </header>
             <div class="challenge">
-
                 <div class="question">
                     <h3>{{ multiChoiceTrainer.flashCard.question }}</h3>
                 </div>
-
                 <div ng-repeat="answer in multiChoiceTrainer.flashCard.answers " class="repeat-wrap ">
-                    <div class="card card-{{answer.panel}}" ng-click="multiChoiceTrainer.showResult(answer.value)">
-                        <div ng-if="answer.panel == 'success'" class="card isCorrect_true ">
-                            {{answer.value}}
-                        </div>
-                        <div ng-if="answer.panel != 'success'" class="card multi-choice-answer">
-                            {{answer.value}}
-                        </div>
+                    <div class="card card-inverse card-{{answer.panel}}" ng-click="showResult(answer.value)">
+                        <div ng-if="answer.panel == 'success'" class="card-block isCorrect_true ">{{answer.value}}</div>
+                        <div ng-if="answer.panel != 'success'" class="card-block multi-choice-answer">{{answer.value}}</div>
                     </div>
                 </div>
-
                 <div class="next-action clearfix">
-                    <button ng-click="multiChoiceTrainer.proceedToNextFlashCard()" class="btn btn-success pull-right blue-btn">Next <i
-                            class="icon-chevron-right"></i></button>
+                    <button ng-click="multiChoiceTrainer.proceedToNextFlashCard()" class="btn btn-success pull-xs-right blue-btn">Next <i class="icon-chevron-right"></i>
+                    </button>
                 </div>
                 <div>
                     <p>right : {{multiChoiceTrainer.flashCard.right}}</p>
-
                     <p>wrong : {{multiChoiceTrainer.flashCard.wrong}}</p>
-
                     <p>rating : {{multiChoiceTrainer.flashCard.rating}}</p>
-
                     <p>importance : {{multiChoiceTrainer.flashCard.importance}}</p>
                 </div>
-
             </div>
         </div>
-        <div class="col-md-2">
-
-        </div>
+        <div class="col-lg-2"></div>
     </div>
 </div>
-
-
-
-

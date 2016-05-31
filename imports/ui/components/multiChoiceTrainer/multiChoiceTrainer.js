@@ -36,7 +36,7 @@ class MultiChoiceTrainer {
         var answers = this.flashCard.answers;
         this.getUserAnswer();
         for (var j = 0; j < answers.length; j++) {
-            answers[j].panel = "info";
+            //answers[j].panel = "info";
         }
     }
     ini = function () {
@@ -54,7 +54,7 @@ class MultiChoiceTrainer {
         this.getUserAnswer(value);
         for (var j = 0; j < answers.length; j++) {
             answers[j].selected = "donno";
-            answers[j].panel = "info";
+            //answers[j].panel = "info";
             answers = this.checkIfSelectedAnswerIsCorrect(j, answers);
             answers = this.checkIfSelectedAnswerIsWrong(j, answers);
         }
@@ -95,7 +95,7 @@ class MultiChoiceTrainer {
         this.getUserAnswer();
         for (var j = 0; j < answers.length; j++) {
             answers[j].selected = "donno";
-            answers[j].panel = "info";
+            answers[j].panel = "";
         }
     }
     acceptAnswer = function () {
