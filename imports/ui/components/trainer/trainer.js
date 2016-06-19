@@ -16,11 +16,13 @@ class Trainer {
         this.subscribe('flashCards');
         this.helpers({
             flashCards() {
-                const selector = {
-                    listId: $stateParams.listId
-                };
-                var flashCards = FlashCards.find(selector).fetch();
-                return flashCards;
+                if(Meteor.user() && Meteor.user()._id) {
+                    const selector = {
+                        listId: $stateParams.listId,
+                    };
+                    var flashCards = FlashCards.find(selector).fetch();
+                    return flashCards;
+                }
             }
         });
     }
@@ -34,7 +36,6 @@ class Trainer {
     iniTrainerShuffle = function () {
         var flashCards = shuffleArray(Vocab._flashCards);
         Vocab._flashCards = flashCards;
-        console.log(new Date().getTime());
     };
 
     setEnterAction = function (userAnswer) {

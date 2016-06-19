@@ -16,7 +16,7 @@ export function ClassFlashCard(flashCardObject) {
         this.setRight(flashCardObject);
         this.setWrong(flashCardObject);
         this.setRating(flashCardObject);
-        this.calculateImportance();
+        this.setImportance();
     };
 
 
