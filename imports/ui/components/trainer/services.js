@@ -11,6 +11,7 @@ function Vocab() {
         this.poolSize = pool_size;
         this.reviewIntervall = review_interval;
         this.displayAnswer = false;
+        this.setLearnProcess();
     };
     this.sortByImportance = function (a, b) {
         return parseFloat(b.importance) - parseFloat(a.importance);
@@ -24,7 +25,9 @@ function Vocab() {
         var objArray = [];
         for (var i = 0; i < flashCards.length; i++) {
             var obj = new ClassFlashCard(flashCards[i]);
-            objArray[i] = obj;
+            if (obj.importance >= 0) {
+                objArray.push(obj);
+            }
         }
         objArray = objArray.sort(this.sortByImportance);
         console.log(objArray);
@@ -108,7 +111,8 @@ function Vocab() {
             this.markForSoon(flashCard)
             flashCard.markAsCorrectAnswered();
         }
-
+        this.setRemainingFlashCardsToLearn();
+        this.setMasteredFlashCards();
     };
     this.markAnswerAsWrong = function () {
         var flashCard = this.currentFlashCard;
@@ -120,6 +124,26 @@ function Vocab() {
     }
     this.setReviewIntervall = function(intervall){
         this.reviewIntervall = intervall;
+    }
+    this.getRemainingFlashCardsToLearn = function(){
+        return this._flashCards.length;
+    }
+    this.setRemainingFlashCardsToLearn = function(){
+        this.remainingFlashCardsToLearn = this.getRemainingFlashCardsToLearn();
+    }
+    this.setTotalFlashCardsToLearn = function(){
+        this.totalFlashCardsToLearn = this.controllerFlashCards.length;
+    }
+    this.getMasteredFlashCards = function(){
+        return this.totalFlashCardsToLearn - this.remainingFlashCardsToLearn;
+    }
+    this.setMasteredFlashCards = function(){
+        this.masteredFlashCards = this.getMasteredFlashCards();
+    }
+    this.setLearnProcess = function(){
+        this.setTotalFlashCardsToLearn();
+        this.setRemainingFlashCardsToLearn();
+        this.setMasteredFlashCards();
     }
 }
 export var Vocab = new Vocab();

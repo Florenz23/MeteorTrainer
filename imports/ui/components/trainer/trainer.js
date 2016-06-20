@@ -32,6 +32,8 @@ class Trainer {
         Vocab.iniTrainer(flashCards);
         this.flashCard = Vocab.currentFlashCard;
         this.displayAnswer = false;
+        this.totalFlashCardsToLearn =  Vocab.totalFlashCardsToLearn;
+        this.masteredFlashCards = 0;
     };
     iniTrainerShuffle = function () {
         var flashCards = shuffleArray(Vocab._flashCards);
@@ -57,6 +59,7 @@ class Trainer {
             this.displayAnswer = false;
             this.flashCard = Vocab.currentFlashCard;
             this.userAnswer = null;
+            this.masteredFlashCards = Vocab.masteredFlashCards;
         }
     };
 
@@ -76,6 +79,7 @@ class Trainer {
         $("#user_answer").val("");
         this.flashCard = Vocab.currentFlashCard;
         this.displayAnswer = false;
+        this.masteredFlashCards = Vocab.masteredFlashCards;
     };
 
     soon = function (word) {

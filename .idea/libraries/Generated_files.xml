@@ -4,8 +4,11 @@
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled-compiled-compiled.js" />
         <item url="file://$PROJECT_DIR$/node_modules/bootstrap/grunt/bs-commonjs-generator-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/socially/socially-compiled-compiled-compiled.js" />
         <item url="file://$PROJECT_DIR$/node_modules/bootstrap/Gruntfile-compiled.js" />
+        <item url="file://$PROJECT_DIR$/client/main-compiled-compiled-compiled.js" />
         <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap.min-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/editor/editor-compiled-compiled.js" />
         <item url="file://$PROJECT_DIR$/client/main-compiled.js" />
         <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/popover-compiled.js" />
         <item url="file://$PROJECT_DIR$/client/main-compiled-compiled.js" />
@@ -37,8 +40,11 @@
       <root url="file://$PROJECT_DIR$/server/startup-compiled.js" />
       <root url="file://$PROJECT_DIR$/imports/ui/components/fcList/fcListRemove/client/partyRemove.tests-compiled-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/node_modules/bootstrap/grunt/bs-commonjs-generator-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/socially/socially-compiled-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/node_modules/bootstrap/Gruntfile-compiled.js" />
+      <root url="file://$PROJECT_DIR$/client/main-compiled-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap.min-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/editor/editor-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/client/main-compiled.js" />
       <root url="file://$PROJECT_DIR$/imports/ui/components/editor/editor-compiled.js" />
       <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/popover-compiled.js" />
