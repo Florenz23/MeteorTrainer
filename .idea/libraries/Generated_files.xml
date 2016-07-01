@@ -15,6 +15,7 @@
         <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/modal-compiled.js" />
         <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/collapse-compiled.js" />
         <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/dropdown-compiled.js" />
+        <item url="file://$PROJECT_DIR$/client/main-compiled-compiled-compiled-compiled-compiled.js" />
         <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/carousel-compiled.js" />
         <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/tooltip-compiled.js" />
         <item url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/scrollspy-compiled.js" />
@@ -52,6 +53,7 @@
       <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/modal-compiled.js" />
       <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/collapse-compiled.js" />
       <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/dropdown-compiled.js" />
+      <root url="file://$PROJECT_DIR$/client/main-compiled-compiled-compiled-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/carousel-compiled.js" />
       <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/tooltip-compiled.js" />
       <root url="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/umd/scrollspy-compiled.js" />

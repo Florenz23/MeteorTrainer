@@ -25,9 +25,11 @@ function Vocab() {
         var objArray = [];
         for (var i = 0; i < flashCards.length; i++) {
             var obj = new ClassFlashCard(flashCards[i]);
-            if (obj.importance >= 0) {
+            //console.log(obj.question);
+            //console.log(obj.importance);
+            //if (obj.importance >= 0) {
                 objArray.push(obj);
-            }
+           // }
         }
         objArray = objArray.sort(this.sortByImportance);
         console.log(objArray);
