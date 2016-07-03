@@ -34,6 +34,7 @@ class Trainer {
         this.displayAnswer = false;
         this.totalFlashCardsToLearn =  Vocab.totalFlashCardsToLearn;
         this.masteredFlashCards = 0;
+        this.hide_charge_button = true;
     };
     iniTrainerShuffle = function () {
         var flashCards = shuffleArray(Vocab._flashCards);
