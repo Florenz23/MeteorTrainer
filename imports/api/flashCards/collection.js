@@ -9,7 +9,8 @@ FlashCards.allow({
         return userId && flashCard.owner === userId;
     },
     update(userId, flashCard, fields, modifier) {
-        return userId && flashCard.owner === userId;
+        //return userId && flashCard.owner === userId;
+        return userId ;
     },
     remove(userId, flashCard) {
         return userId && flashCard.owner === userId;
