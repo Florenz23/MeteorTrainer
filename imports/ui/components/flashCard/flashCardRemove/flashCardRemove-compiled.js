@@ -4,24 +4,26 @@ import angularMeteor from 'angular-meteor';
 import './flashCardRemove.html';
 import { FlashCards } from '../../../../api/flashCards';
 
-class ListRemove {
+class FlashCardRemove {
     remove() {
-        if (this.list) {
-            FlashCards.remove(this.list._id);
+        if (this.flash) {
+            console.log(this.flash);
+            FlashCards.remove(this.flash._id);
         }
     }
 }
 
-const name = 'listRemove';
+const name = 'flashCardRemove';
 
 // create a module
 export default angular.module(name, [angularMeteor]).component(name, {
-    templateUrl: `imports/ui/components/lists/${ name }/${ name }.html`,
+    templateUrl: `imports/ui/components/flashCard/${ name }/${ name }.html`,
     bindings: {
-        list: '<'
+        flash: '<'
+
     },
     controllerAs: name,
-    controller: ListRemove
+    controller: FlashCardRemove
 });
 
 //# sourceMappingURL=flashCardRemove-compiled.js.map

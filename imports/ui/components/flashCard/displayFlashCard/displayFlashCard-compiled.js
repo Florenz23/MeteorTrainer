@@ -3,26 +3,24 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 
 import './displayFlashCard.html';
-import { FlashCards } from '../../../../api/lists';
+import { FlashCards } from '../../../../api/flashCards';
 import { name as FlashCardsAdd } from '../flashCardAdd/flashCardAdd';
-import { name as ListRemove } from '../flashCardRemove/flashCardRemove';
+import { name as FlashCardRemove } from '../flashCardRemove/flashCardRemove';
 
 class DisplayFlashCard {
     constructor($scope, $reactive, $stateParams) {
         'ngInject';
 
         this.listId = $stateParams.listId;
-        console.log(this.listId);
         $reactive(this).attach($scope);
-        this.subscribe('lists');
-
+        this.subscribe('flashCards');
         this.helpers({
-            lists() {
+            flashCards() {
                 const selector = {
                     listId: $stateParams.listId
                 };
-                console.log(selector);
-                return FlashCards.find(selector);
+                var flashCards = FlashCards.find(selector);
+                return flashCards;
             }
         });
     }
@@ -31,7 +29,7 @@ class DisplayFlashCard {
 const name = 'displayFlashCard';
 
 // create a module
-export default angular.module(name, [angularMeteor, uiRouter, ListsAdd, ListRemove]).component(name, {
+export default angular.module(name, [angularMeteor, uiRouter, FlashCardsAdd, FlashCardRemove]).component(name, {
     templateUrl: `imports/ui/components/flashCard/${ name }/${ name }.html`,
     controllerAs: name,
     controller: DisplayFlashCard
@@ -40,7 +38,7 @@ export default angular.module(name, [angularMeteor, uiRouter, ListsAdd, ListRemo
 function config($stateProvider) {
     'ngInject';
 
-    $stateProvider.state('fcListsList', {
+    $stateProvider.state('home.fcListsList', {
         url: '/lists/:listId',
         template: '<display-flash-card></display-flash-card>'
     });

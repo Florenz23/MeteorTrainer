@@ -2,7 +2,7 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 
-import './partyDetails.html';
+import './fcListUserInvite.html';
 
 class PartyDetails {
     constructor($stateParams) {
@@ -12,11 +12,11 @@ class PartyDetails {
     }
 }
 
-const name = 'partyDetails';
+const name = 'fcListUserInvite';
 
 // create a module
 export default angular.module(name, [angularMeteor, uiRouter]).component(name, {
-    templateUrl: `imports/ui/components/${ name }/${ name }.html`,
+    templateUrl: `imports/ui/components/fcList/${ name }/${ name }.html`,
     controllerAs: name,
     controller: PartyDetails
 }).config(config);
@@ -24,9 +24,9 @@ export default angular.module(name, [angularMeteor, uiRouter]).component(name, {
 function config($stateProvider) {
     'ngInject';
 
-    $stateProvider.state('partyDetails', {
+    $stateProvider.state('fcListUserInvite', {
         url: '/parties/:partyId',
-        template: '&lt;party-details&gt;&lt;/party-details&gt;'
+        template: '<fc-list-user-invite></fc-list-user-invite>'
     });
 };
 
