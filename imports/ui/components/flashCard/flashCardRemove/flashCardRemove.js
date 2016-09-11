@@ -1,7 +1,7 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 
-import './flashCardRemove.html';
+import template from './flashCardRemove.html';
 import { FlashCards } from '../../../../api/flashCards';
 
 class FlashCardRemove {
@@ -19,7 +19,7 @@ const name = 'flashCardRemove';
 export default angular.module(name, [
     angularMeteor
 ]).component(name, {
-    templateUrl: `imports/ui/components/flashCard/${name}/${name}.html`,
+    template,
     bindings: {
         flash: '<'
 

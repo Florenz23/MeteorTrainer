@@ -2,7 +2,7 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 
-import './flashCardDetails.html';
+import template from './flashCardDetails.html';
 
 class ListDetails {
     constructor($stateParams) {
@@ -19,7 +19,7 @@ export default angular.module(name, [
     angularMeteor,
     uiRouter
 ]).component(name, {
-    templateUrl: `imports/ui/components/flashCard/${name}/${name}.html`,
+    template,
     controllerAs: name,
     controller: ListDetails
 })

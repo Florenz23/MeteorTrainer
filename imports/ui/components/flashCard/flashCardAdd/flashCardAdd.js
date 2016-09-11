@@ -5,7 +5,7 @@ import { FlashCards } from '../../../../api/flashCards';
 import { FA } from '../../multiChoiceTrainer/FA'
 import { MultiChoiceFlashCard, convertTrainerArray } from '../../multiChoiceTrainer/MultiChoiceFlashCard'
 
-import './flashCardAdd.html';
+import template from './flashCardAdd.html';
 
 class FlashCardAdd {
     constructor($stateParams) {
@@ -48,7 +48,7 @@ export default angular.module(name, [
     angularMeteor,
     uiRouter
 ]).component(name, {
-    templateUrl: `imports/ui/components/flashCard/${name}/${name}.html`,
+    template,
     controllerAs: name,
     controller: FlashCardAdd
 })

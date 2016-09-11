@@ -2,7 +2,7 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 
-import './flashCard.html';
+import template from './flashCard.html';
 import { name as DisplayFlashCards } from '../flashCard/displayFlashCard/displayFlashCard';
 
 class FlashCards {
@@ -17,7 +17,7 @@ export default angular.module(name, [
     DisplayFlashCards,
     'accounts.ui'
 ]).component(name, {
-    templateUrl: `imports/ui/components/${name}/${name}.html`,
+    template,
     controllerAs: name,
     controller: FlashCards
 })
