@@ -3,7 +3,7 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import ngMaterial from 'angular-material';
 
-import './socially.html';
+import template from './socially.html';
 import { name as FlashCards } from '../flashCard/flashCard';
 import { name as Party } from '../socially/fcList';
 import { name as Navigation } from '../navigation/navigation';
@@ -25,7 +25,7 @@ export default angular.module(name, [
     Auth,
     'accounts.ui'
 ]).component(name, {
-    templateUrl: `imports/ui/components/${name}/${name}.html`,
+    template,
     controllerAs: name,
     controller: Socially
 })
