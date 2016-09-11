@@ -4,7 +4,7 @@ import uiRouter from 'angular-ui-router';
 import { name as Editor } from '../editor/editor';
 import { name as MultiChoice } from '../multiChoiceTrainer/multiChoiceTrainer';
 
-import './navigation.html';
+import template from './navigation.html';
 class Navigation {
 
 }
@@ -17,7 +17,7 @@ export default angular.module(name, [
     Editor,
     MultiChoice
 ]).component(name, {
-    templateUrl: `imports/ui/components/${name}/${name}.html`,
+    template,
     controllerAs: name,
     controller: Navigation
 })
