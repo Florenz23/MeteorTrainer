@@ -3,7 +3,7 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
 
-import './editor.html';
+import template from './editor.html';
 import { name as FlashCards } from '../flashCard/flashCard';
 import { name as Party } from '../socially/fcList';
 
@@ -24,7 +24,7 @@ export default angular.module(name, [
     Party,
     'accounts.ui'
 ]).component(name, {
-    templateUrl: `imports/ui/components/${name}/${name}.html`,
+    template,
     controllerAs: name,
     controller: Editor
 })
