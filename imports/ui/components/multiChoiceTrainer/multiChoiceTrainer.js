@@ -4,7 +4,7 @@ import uiRouter from 'angular-ui-router';
 
 import { Meteor } from 'meteor/meteor';
 import { FlashCards } from '../../../api/flashCards';
-import './multiChoiceTrainer.html'
+import template from './multiChoiceTrainer.html'
 import { Vocab } from '../trainer/services';
 import { name as DisplayFlashCard } from '../flashCard/displayFlashCard/displayFlashCard';
 // ess muss alles ortiert werden, da es zz noch von anderen Klassen genutzt wird flashCAdd
@@ -46,10 +46,10 @@ class MultiChoiceTrainer {
         this.wrongAnswered = true;
         this.answers = {};
     };
-    getFlashCards = function () {
-        var flashCards = convertTrainerArray(FA);
-        return flashCards;
-    };
+    // getFlashCards = function () {
+    //     var flashCards = convertTrainerArray(FA);
+    //     return flashCards;
+    // };
     showResult = function (value) {
         this.correctCount = 0;
         var answers = this.flashCard.answers;
@@ -126,7 +126,7 @@ export default angular.module(name, [
     uiRouter,
     DisplayFlashCard
 ]).component(name, {
-    templateUrl: `imports/ui/components/${name}/${name}.html`,
+    template,
     controllerAs: name,
     controller: MultiChoiceTrainer
 }).directive('errSrc', function () {
