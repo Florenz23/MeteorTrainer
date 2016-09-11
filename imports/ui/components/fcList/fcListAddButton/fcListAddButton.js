@@ -1,35 +1,16 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 
-import template from './fcListAddButton.html';
+// import template from './fcListAddButton.html';
 import template1 from'./fcListAddModal.html';
 import { name as PartyAdd } from '../fcListAdd/fcListAdd';
 
 class PartyAddButton {
-    constructor($mdDialog, $mdMedia) {
+    constructor() {
         'ngInject';
 
-        this.$mdDialog = $mdDialog;
-        this.$mdMedia = $mdMedia
     }
 
-    open(event) {
-        this.$mdDialog.show({
-            controller($mdDialog) {
-                'ngInject';
-
-                this.close = () => {
-                    $mdDialog.hide();
-                }
-            },
-            controllerAs: 'fcListAddModal',
-            template,
-            targetEvent: event,
-            parent: angular.element(document.body),
-            clickOutsideToClose: true,
-            fullscreen: this.$mdMedia('sm') || this.$mdMedia('xs')
-        });
-    }
 }
 
 const name = 'fcListAddButton';
