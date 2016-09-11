@@ -4,7 +4,7 @@ import uiRouter from 'angular-ui-router';
 import utilsPagination from 'angular-utils-pagination';
 import { Counts } from 'meteor/tmeasday:publish-counts';
 
-import './fcListsList.html';
+import template from './fcListsList.html';
 import { Parties } from '../../../../api/fcLists';
 import { name as PartyAdd } from '../fcListAdd/fcListAdd';
 import { name as PartyRemove } from '../fcListRemove/fcListRemove';
@@ -90,7 +90,7 @@ export default angular.module(name, [
     DisplayFlashCard,
 
 ]).component(name, {
-    templateUrl: `imports/ui/components/fcList/${name}/${name}.html`,
+    template,
     controllerAs: name,
     controller: PartiesList
 });

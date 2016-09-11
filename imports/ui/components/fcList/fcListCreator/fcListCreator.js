@@ -3,7 +3,7 @@ import angularMeteor from 'angular-meteor';
 
 import { Meteor } from 'meteor/meteor';
 
-import './fcListCreator.html';
+import template from './fcListCreator.html';
 import { name as DisplayNameFilter } from '../../../filters/displayNameFilter';
 
 /**
@@ -40,7 +40,7 @@ export default angular.module(name, [
     angularMeteor,
     DisplayNameFilter
 ]).component(name, {
-    templateUrl: `imports/ui/components/fcList/${name}/${name}.html`,
+    template,
     controllerAs: name,
     bindings: {
         list: '<'

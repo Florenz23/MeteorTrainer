@@ -1,8 +1,8 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 
-import './fcListAddButton.html';
-import './fcListAddModal.html';
+import template from './fcListAddButton.html';
+import template1 from'./fcListAddModal.html';
 import { name as PartyAdd } from '../fcListAdd/fcListAdd';
 
 class PartyAddButton {
@@ -23,7 +23,7 @@ class PartyAddButton {
                 }
             },
             controllerAs: 'fcListAddModal',
-            templateUrl: `imports/ui/components/fcList/${name}/fcListAddModal.html`,
+            template,
             targetEvent: event,
             parent: angular.element(document.body),
             clickOutsideToClose: true,
@@ -39,7 +39,7 @@ export default angular.module(name, [
     angularMeteor,
     PartyAdd
 ]).component(name, {
-    templateUrl: `imports/ui/components/fcList/${name}/${name}.html`,
+    template1,
     controllerAs: name,
     controller: PartyAddButton
 });

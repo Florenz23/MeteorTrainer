@@ -7,7 +7,7 @@ import { name as DisplayNameFilter } from '../../../filters/displayNameFilter';
 
 import { Meteor } from 'meteor/meteor';
 
-import './fcListUninvited.html';
+import template from './fcListUninvited.html';
 import { name as UninvitedFilter } from '../../../filters/uninvitedFilter';
 
 class PartyUninvited {
@@ -47,7 +47,7 @@ export default angular.module(name, [
     UninvitedFilter,
     DisplayNameFilter
 ]).component(name, {
-    templateUrl: `imports/ui/components/fcList/${name}/${name}.html`,
+    template,
     controllerAs: name,
     bindings: {
         list: '<'

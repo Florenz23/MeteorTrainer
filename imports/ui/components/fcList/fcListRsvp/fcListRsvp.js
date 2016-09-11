@@ -4,7 +4,7 @@ import _ from 'underscore';
 
 import { Meteor } from 'meteor/meteor';
 
-import './fcListRsvp.html';
+import template from './fcListRsvp.html';
 
 class PartyRsvp {
     yes() {
@@ -59,7 +59,7 @@ const name = 'fcListRsvp';
 export default angular.module(name, [
     angularMeteor
 ]).component(name, {
-    templateUrl: `imports/ui/components/fcList/${name}/${name}.html`,
+    template,
     controllerAs: name,
     bindings: {
         list: '<'

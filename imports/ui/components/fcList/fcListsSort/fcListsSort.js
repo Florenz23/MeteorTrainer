@@ -1,7 +1,7 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 
-import './fcListsSort.html';
+import template from './fcListsSort.html';
 
 class PartiesSort {
     constructor() {
@@ -23,7 +23,7 @@ const name = 'fcListsSort';
 export default angular.module(name, [
     angularMeteor
 ]).component(name, {
-    templateUrl: `imports/ui/components/fcList/${name}/${name}.html`,
+    template,
     bindings: {
         onChange: '&',
         property: '@',

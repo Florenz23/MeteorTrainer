@@ -3,7 +3,7 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import { Meteor } from 'meteor/meteor';
 
-import './fcListAdd.html';
+import template from './fcListAdd.html';
 import { Parties } from '../../../../api/fcLists';
 
 class PartyAdd {
@@ -38,7 +38,7 @@ export default angular.module(name, [
     angularMeteor,
     uiRouter
 ]).component(name, {
-    templateUrl: `imports/ui/components/fcList/${name}/${name}.html`,
+    template,
     bindings: {
         done: '&?'
     },

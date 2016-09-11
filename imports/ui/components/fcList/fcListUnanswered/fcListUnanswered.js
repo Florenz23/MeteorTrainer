@@ -4,7 +4,7 @@ import _ from 'underscore';
 
 import { Meteor } from 'meteor/meteor';
 
-import './fcListUnanswered.html';
+import template from './fcListUnanswered.html';
 import { name as DisplayNameFilter } from '../../../filters/displayNameFilter';
 
 class PartyUnanswered {
@@ -30,7 +30,7 @@ export default angular.module(name, [
     angularMeteor,
     DisplayNameFilter
 ]).component(name, {
-    templateUrl: `imports/ui/components/fcList/${name}/${name}.html`,
+    template,
     controllerAs: name,
     bindings: {
         list: '<'

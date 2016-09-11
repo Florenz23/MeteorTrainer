@@ -1,7 +1,7 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 
-import './fcListRemove.html';
+import template from './fcListRemove.html';
 import { Parties } from '../../../../api/fcLists';
 
 class FcListRemove {
@@ -18,7 +18,7 @@ const name = 'fcListRemove';
 export default angular.module(name, [
   angularMeteor
 ]).component(name, {
-  templateUrl: `imports/ui/components/fcList/${name}/${name}.html`,
+    template,
   bindings: {
     list: '<'
   },

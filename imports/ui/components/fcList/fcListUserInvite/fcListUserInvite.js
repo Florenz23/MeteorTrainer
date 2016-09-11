@@ -2,7 +2,7 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 
-import './fcListUserInvite.html';
+import template from './fcListUserInvite.html';
 
 class PartyDetails {
     constructor($stateParams) {
@@ -20,7 +20,7 @@ export default angular.module(name, [
     uiRouter
 
 ]).component(name, {
-    templateUrl: `imports/ui/components/fcList/${name}/${name}.html`,
+    template,
     controllerAs: name,
     controller: PartyDetails
 })

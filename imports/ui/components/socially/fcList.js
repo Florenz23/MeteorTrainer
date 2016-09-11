@@ -3,7 +3,7 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 
 
-import './fcList.html';
+import template from './fcList.html';
 import { name as FcListsList } from '../fcList/fcListsList/fcListsList';
 import { name as FcListDetails } from '../fcList/fcListDetails/fcListDetails';
 import { name as Trainer } from '../trainer/trainer';
@@ -23,7 +23,7 @@ export default angular.module(name, [
     Trainer,
     'accounts.ui'
 ]).component(name, {
-    templateUrl: `imports/ui/components/socially/${name}.html`,
+    template,
     controllerAs: name,
     controller: FcList
 })

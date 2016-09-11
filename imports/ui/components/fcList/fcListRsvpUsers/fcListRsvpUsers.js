@@ -3,7 +3,7 @@ import angularMeteor from 'angular-meteor';
 
 import { Meteor } from 'meteor/meteor';
 
-import './fcListRsvpUsers.html';
+import template from './fcListRsvpUsers.html';
 import { name as DisplayNameFilter } from '../../../filters/displayNameFilter';
 
 class PartyRsvpUsers {
@@ -19,7 +19,7 @@ export default angular.module(name, [
     angularMeteor,
     DisplayNameFilter
 ]).component(name, {
-    templateUrl: `imports/ui/components/fcList/${name}/${name}.html`,
+    template,
     controllerAs: name,
     bindings: {
         rsvps: '<',

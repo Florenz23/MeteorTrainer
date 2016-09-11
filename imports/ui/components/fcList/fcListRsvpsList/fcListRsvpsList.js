@@ -1,7 +1,7 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 
-import './fcListRsvpsList.html';
+import template from './fcListRsvpsList.html';
 import { name as PartyRsvpUsers } from '../fcListRsvpUsers/fcListRsvpUsers';
 
 class PartyRsvpsList { }
@@ -12,7 +12,7 @@ const name = 'fcListRsvpsList';
 export default angular.module(name, [
     angularMeteor,
 ]).component(name, {
-    templateUrl: `imports/ui/components/fcList/${name}/${name}.html`,
+    template,
     controllerAs: name,
     bindings: {
         rsvps: '<'
