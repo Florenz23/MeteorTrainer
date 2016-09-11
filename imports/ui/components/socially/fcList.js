@@ -1,7 +1,6 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
-import ngMaterial from 'angular-material';
 
 
 import './fcList.html';
@@ -17,7 +16,6 @@ const name = 'fcList';
 // create a module
 export default angular.module(name, [
     angularMeteor,
-    ngMaterial,
     FcListsList,
     uiRouter,
     FcListsList,

@@ -1,7 +1,6 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
-import ngMaterial from 'angular-material';
 import utilsPagination from 'angular-utils-pagination';
 
 import './editor.html';
@@ -20,7 +19,6 @@ const name = 'editor';
 // create a module
 export default angular.module(name, [
     angularMeteor,
-    ngMaterial,
     uiRouter,
     FlashCards,
     Party,
