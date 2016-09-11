@@ -4,7 +4,7 @@ import uiRouter from 'angular-ui-router';
 
 import { Meteor } from 'meteor/meteor';
 import { FlashCards } from '../../../api/flashCards';
-import './trainer.html'
+import template from './trainer.html'
 import { Vocab } from './services';
 import { name as DisplayFlashCard } from '../flashCard/displayFlashCard/displayFlashCard';
 import { MultiChoiceFlashCard, convertTrainerArray, shuffleArray } from '../multiChoiceTrainer/MultiChoiceFlashCard'
@@ -102,7 +102,7 @@ export default angular.module(name, [
     uiRouter,
     DisplayFlashCard
 ]).component(name, {
-    templateUrl: `imports/ui/components/${name}/${name}.html`,
+    template,
     controllerAs: name,
     controller: Trainer
 })
