@@ -6,6 +6,7 @@ import { Counts } from 'meteor/tmeasday:publish-counts';
 
 import template from './fcListsList.html';
 import { Parties } from '../../../../api/fcLists';
+import { name as CsvAdd } from '../csvListAdd/csvListAdd';
 import { name as PartyAdd } from '../fcListAdd/fcListAdd';
 import { name as PartyRemove } from '../fcListRemove/fcListRemove';
 import { name as PartiesSort } from '../fcListsSort/fcListsSort';
@@ -80,6 +81,7 @@ export default angular.module(name, [
     angularMeteor,
     uiRouter,
     PartyAdd,
+    CsvAdd,
     utilsPagination,
     PartiesSort,
     PartyRemove,

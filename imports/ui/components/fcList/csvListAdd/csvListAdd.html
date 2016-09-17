@@ -1,0 +1,44 @@
+<div class="form-group">
+    <label>
+        List Id:
+    </label>
+    <input type="text"  ng-model="csvListAdd.fcList.listId"/>
+
+</div>
+<div class="form-group">
+    <label>
+        Csv:
+    </label>
+    <div class="form-group">
+        <label for="comment">Csv:</label>
+        <textarea class="form-control" rows="10" id="comment" ng-model="csvListAdd.fcList.csvData"></textarea>
+    </div>
+
+</div>
+<button ng-click="csvListAdd.submit()" class="btn btn-success">Add Data!</button>
+
+<div class="container">
+    <div class="form-group">
+        <label for="listId">List Id</label>
+        <input ng-model="data.listId" type="text" class="form-control" id="listId">
+    </div>
+    <div class="form-group">
+        <label for="usr">Keys:</label>
+        <input ng-model="data.keys" type="text" class="form-control" id="usr">
+    </div>
+    <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea ng-model="data.csv" class="form-control" rows="5" id="comment">
+            "Id","UserName"
+"1","Sam Smith"
+"2","Fred Frankly"
+"1","Zachary Zupers"
+        </textarea>
+    </div>
+    <button ng-click="display()" id="convert">Convert to JSON</button>
+    <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea ng-model="data.json" class="form-control" rows="5" id="comment"></textarea>
+    </div>
+
+</div>
