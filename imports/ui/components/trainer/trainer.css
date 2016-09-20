@@ -1,18 +1,28 @@
-.trainer-question {
-  text-align: center;
-  height: 250px;
+.trainer-main{
+}
+
+
+
+.trainer-question{
+    text-align:center;
+    height: 150px;
 }
 .trainer-answer {
-  height: 200px;
+    height: 200px;
 }
-.trainer-answer-textarea {
-  height: 108em;
-  resize: none;
+.trainer-answer-textarea{
+    resize:none;
 }
+
 .trainer-answer-correct {
-  color: red;
-  font-size: 20px;
-  padding: 40px;
+    color:red;
+    font-size: 20px;
+    padding : 40px;
+}
+
+.trainer-learn-process {
+    height: 100px;
+    text-align: center;
 }
 /* Custom, iPhone Retina */
 @media only screen and (min-width: 320px) {

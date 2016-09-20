@@ -77,7 +77,7 @@ function Vocab() {
         var flashCards = this.flashCards();
         var flashCard = this.currentFlashCard;
         flashCards.splice(_.indexOf(flashCards, flashCard), 1);
-        flashCards.splice(parseInt(this.poolSize), 0, flashCard);
+        flashCards.splice(parseInt(this.poolSize-1), 0, flashCard);
         this.currentFlashCard = _.first(this.flashCards());
     };
     this.markForReview = function () {
@@ -146,6 +146,15 @@ function Vocab() {
         this.setTotalFlashCardsToLearn();
         this.setRemainingFlashCardsToLearn();
         this.setMasteredFlashCards();
+    }
+    this.getPoll = function(){
+        var poolArray = [];
+        for (var i = 0; i< this.poolSize; i++){
+            var flashCards = this.getFlashCards();
+            poolArray.push(flashCards[i])
+        }
+        console.log(poolArray);
+        return poolArray;
     }
 }
 export var Vocab = new Vocab();

@@ -7,6 +7,7 @@
             <div class="container">
                 <progress class="progress" value="{{trainer.masteredFlashCards}}" max="{{trainer.totalFlashCardsToLearn}}">{{trainer.masteredFlashCards/trainer.totalFlashCardsToLearn}}%</progress>{{trainer.masteredFlashCards}}/
                 {{trainer.totalFlashCardsToLearn}}</div>
+            <show-learn-process></show-learn-process>
             <div class="trainer-question">
                 <h2>{{trainer.flashCard.question}}</h2>
             </div>

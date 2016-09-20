@@ -2,12 +2,13 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 
-import { Meteor } from 'meteor/meteor';
-import { FlashCards } from '../../../api/flashCards';
+import {Meteor} from 'meteor/meteor';
+import {FlashCards} from '../../../api/flashCards';
 import template from './trainer.html'
-import { Vocab } from './services';
-import { name as DisplayFlashCard } from '../flashCard/displayFlashCard/displayFlashCard';
-import { MultiChoiceFlashCard, convertTrainerArray, shuffleArray } from '../multiChoiceTrainer/MultiChoiceFlashCard'
+import template1 from './show-learn-process.html'
+import {Vocab} from './services';
+import {name as DisplayFlashCard} from '../flashCard/displayFlashCard/displayFlashCard';
+import {MultiChoiceFlashCard, convertTrainerArray, shuffleArray} from '../multiChoiceTrainer/MultiChoiceFlashCard'
 
 class Trainer {
     constructor($scope, $reactive, $stateParams) {
@@ -16,7 +17,7 @@ class Trainer {
         this.subscribe('flashCards');
         this.helpers({
             flashCards() {
-                if(Meteor.user() && Meteor.user()._id) {
+                if (Meteor.user() && Meteor.user()._id) {
                     const selector = {
                         listId: $stateParams.listId,
                     };
@@ -25,6 +26,7 @@ class Trainer {
                 }
             }
         });
+        this.moin = "jojo";
     }
 
     iniTrainer = function () {
@@ -32,9 +34,10 @@ class Trainer {
         Vocab.iniTrainer(flashCards);
         this.flashCard = Vocab.currentFlashCard;
         this.displayAnswer = false;
-        this.totalFlashCardsToLearn =  Vocab.totalFlashCardsToLearn;
+        this.totalFlashCardsToLearn = Vocab.totalFlashCardsToLearn;
         this.masteredFlashCards = 0;
         this.hide_charge_button = true;
+        this.showProcess();
     };
     iniTrainerShuffle = function () {
         var flashCards = shuffleArray(Vocab._flashCards);
@@ -61,6 +64,7 @@ class Trainer {
             this.flashCard = Vocab.currentFlashCard;
             this.userAnswer = null;
             this.masteredFlashCards = Vocab.masteredFlashCards;
+            this.showProcess();
         }
     };
 
@@ -81,6 +85,7 @@ class Trainer {
         this.flashCard = Vocab.currentFlashCard;
         this.displayAnswer = false;
         this.masteredFlashCards = Vocab.masteredFlashCards;
+        this.showProcess();
     };
 
     soon = function (word) {
@@ -92,6 +97,13 @@ class Trainer {
         Vocab.markForLater(word);
         this.proceedToNextFlashCard();
     }
+    showProcess = function () {
+        this.counter++;
+        this.recentProcess = Vocab.getPoll();
+        console.log("jpoj");
+    }
+
+
 }
 
 const name = 'trainer';
@@ -117,6 +129,13 @@ export default angular.module(name, [
                     event.preventDefault();
                 }
             });
+        };
+    })
+    .directive('showLearnProcess', function () {
+        return {
+            restrict: 'E',
+            template: template1,
+            controller: Trainer
         };
     })
     .config(config);

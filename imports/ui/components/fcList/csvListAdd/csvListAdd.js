@@ -16,9 +16,9 @@ class CsvAdd {
         this.data = {};
         this.data.csv = '"ja","yes","eng"\n"nein","no","eng"';
         this.data.json = "moin";
-        this.data.keys = '"question","answer","comment","owner","listId","right","wrong","rating","lastRevision","importance"';
+        this.data.keys = '"question","answer","comment","owner","listId","right","wrong","rating","lastRevision"';
         this.data.listId = "WEEk8A8NWaKdNRNMJ";
-        this.data.importance = "not learned";
+        this.data.lastRevision = "notLearned";
     }
 
     getKeys = function () {

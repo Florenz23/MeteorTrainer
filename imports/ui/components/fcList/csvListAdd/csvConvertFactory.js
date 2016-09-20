@@ -65,7 +65,7 @@ function CsvJsonConverter() {
                     objArray[i - 1][key] = "0";
                     objArray[i - 1]["listId"] = convert_data.listId;
                     objArray[i - 1]["owner"] = convert_data.owner;
-                    objArray[i - 1]["importance"] = "not learned";
+                    objArray[i - 1]["lastRevision"] = "notLearned";
                 }
             }
         }
