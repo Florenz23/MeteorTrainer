@@ -73,10 +73,10 @@ export function ClassFlashCard(flashCardObject) {
     };
 
     this.setStartPoolStatus = function (poolStatus) {
-        var start_pool_status = 1;
+        this.start_pool_status = 3;
         var newPoolStatus;
         if (poolStatus == undefined) {
-            newPoolStatus = start_pool_status;
+            newPoolStatus = this.start_pool_status;
         } else {
             newPoolStatus = poolStatus;
         }
@@ -97,7 +97,7 @@ export function ClassFlashCard(flashCardObject) {
     };
     this.updateData = function (check) {
         this.correctLastRevision();
-        if (this.poolStatus == 1){
+        if (this.poolStatus == this.start_pool_status){
             this.calculateRating(check);
             this.setImportance();
         }
@@ -115,7 +115,7 @@ export function ClassFlashCard(flashCardObject) {
         this.wrong++;
     };
     this.calculateRating = function (correct) {
-        if (this.poolStatus != 1) {
+        if (this.poolStatus != this.start_pool_status) {
             return;
         }
         var rating = this.rating;
