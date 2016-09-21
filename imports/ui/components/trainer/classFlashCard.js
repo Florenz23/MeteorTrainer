@@ -93,7 +93,7 @@ export function ClassFlashCard(flashCardObject) {
     this.markAsWrongAnswered = function () {
         this.updateWrong();
         this.updateData(0);
-        this.poolStatus = -1;
+        this.poolStatus = 0;
     };
     this.updateData = function (check) {
         this.correctLastRevision();
