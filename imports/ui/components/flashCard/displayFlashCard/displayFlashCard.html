@@ -1,6 +1,14 @@
 <flash-card-add></flash-card-add>
 <div class="container">
     <ul>
+        <li>
+            <div class="editpopup editpopup-{{displayFlashCard.istrue}} ">
+                <p>edit id:<input type="text" ng-model="displayFlashCard.editedItem.question"></p>
+                <p>edit pname:<input type="text" ng-model="displayFlashCard.editedItem.answer"></p>
+                <button ng-click="displayFlashCard.save()">save</button>
+                <button ng-click="displayFlashCard.closepopup()">cancel</button>
+            </div>
+        </li>
         <li ng-repeat="flashCard in displayFlashCard.flashCards" ng-click="null" class="flash-card">
             <div class="md-list-item-text" layout="column">
                 <div class="row">
@@ -8,6 +16,8 @@
                         <div class="form-group">
                             <input class="form-control" type="text" value="{{flashCard.question}}">
                             <input class="form-control" type="text" value="{{flashCard.answer}}">
+                            <button ng-click="displayFlashCard.editrow($index)" type="submit" class="btn btn-primary">Edit</button>
+
                         </div>
                         <p>PoolStatus:{{flashCard.poolStatus}}
                             Rating:{{flashCard.rating}}
