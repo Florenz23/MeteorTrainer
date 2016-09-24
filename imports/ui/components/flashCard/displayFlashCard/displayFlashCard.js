@@ -54,22 +54,6 @@ class DisplayFlashCard {
         });
     }
 
-    save1(flashCard) {
-        FlashCards.update({
-            _id: flashCard._id
-        }, {
-            $set: {
-                question: flashCard.question,
-                answer: flashCard.answer,
-            }
-        }, (error) => {
-            if (error) {
-                console.log('Oops, unable to update the fcList...');
-            } else {
-                console.log('Done!');
-            }
-        });
-    }
 }
 
 const name = 'displayFlashCard';

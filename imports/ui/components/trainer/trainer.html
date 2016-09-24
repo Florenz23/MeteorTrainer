@@ -40,6 +40,13 @@
                 <p ng-show="trainer.displayAnswer">{{ trainer.flashCard.answer }}</p>
             </div>
         </div>
+        <button ng-click="trainer.editrow($index)" type="submit" class="btn btn-primary">Edit</button>
+        <div class="editpopup editpopup-{{trainer.istrue}} ">
+            <p>edit id:<input type="text" ng-model="trainer.editedItem.question"></p>
+            <p>edit pname:<input type="text" ng-model="trainer.editedItem.answer"></p>
+            <button ng-click="trainer.save()">save</button>
+            <button ng-click="trainer.closepopup()">cancel</button>
+        </div>
     </div>
 </div>
 <!--<div class="container">-->

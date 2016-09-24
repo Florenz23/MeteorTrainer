@@ -26,7 +26,7 @@ class Trainer {
                 }
             }
         });
-        this.moin = "jojo";
+        this.editedItem = {};
     }
 
     iniTrainer = function () {
@@ -101,6 +101,33 @@ class Trainer {
         this.counter++;
         this.recentProcess = Vocab.getPoll();
         console.log("jpoj");
+    }
+    editrow = function ($index) {
+        this.istrue = true;
+        this.$index = $index;
+        angular.copy(this.flashCard, this.editedItem);
+    }
+    closepopup = function () {
+        this.istrue = false;
+
+    }
+    save = function () {
+        this.istrue = false;
+        FlashCards.update({
+            _id: this.editedItem._id
+        }, {
+            $set: {
+                question: this.editedItem.question,
+                answer: this.editedItem.answer,
+            }
+        }, (error) => {
+            if (error) {
+                console.log('Oops, unable to update the fcList...');
+            } else {
+                console.log('Done!');
+                angular.copy(this.editedItem, this.flashCard)
+            }
+        });
     }
 
 

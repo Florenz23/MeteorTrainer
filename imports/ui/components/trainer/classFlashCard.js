@@ -73,7 +73,7 @@ export function ClassFlashCard(flashCardObject) {
     };
 
     this.setStartPoolStatus = function (poolStatus) {
-        this.start_pool_status = 3;
+        this.start_pool_status = 1;
         var newPoolStatus;
         if (poolStatus == undefined) {
             newPoolStatus = this.start_pool_status;

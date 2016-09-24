@@ -32,7 +32,6 @@ function Vocab() {
            // }
         }
         objArray = objArray.sort(this.sortByImportance);
-        console.log(objArray);
         return objArray;
     }
     this.sortByImportance = function (a, b) {
