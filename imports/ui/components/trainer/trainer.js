@@ -181,16 +181,19 @@ var dbFlashCardss = [
     {
         question: 'one',
         answer: 'eins',
+        importance: -1,
         type: 'noun'
     },
     {
         question: 'two',
         answer: 'zwei',
+        importance: -1,
         type: 'adjective'
     },
     {
         question: 'three',
         answer: 'drei',
+        importance: -1,
         type: 'Adjective'
     },
     {

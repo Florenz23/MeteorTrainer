@@ -1,19 +1,37 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 
-import template from './flashCardRemove.html';
-import { FlashCards } from '../../../../api/flashCards';
+import template from './flashCardEdit.html';
+import {FlashCards} from '../../../../api/flashCards';
 
-class FlashCardRemove {
-    remove() {
-        if (this.flash) {
-            console.log(this.flash);
-            FlashCards.remove(this.flash._id);
-        }
+class FlashCardEdit {
+
+    openModal = function () {
+        console.log("jojo");
+        $("#myModal").modal("show");
     }
+
+
+    saveEdit = function () {
+        FlashCards.update({
+            _id: this.flashCard._id
+        }, {
+            $set: {
+                question: this.editedItem.question,
+                answer: this.editedItem.answer,
+            }
+        }, (error) => {
+            if (error) {
+                console.log('Oops, unable to update the fcList...');
+            } else {
+                console.log('Done!');
+            }
+        });
+    }
+
 }
 
-const name = 'flashCardRemove';
+const name = 'flashCardEdit';
 
 // create a module
 export default angular.module(name, [
@@ -25,5 +43,5 @@ export default angular.module(name, [
 
     },
     controllerAs: name,
-    controller: FlashCardRemove
+    controller: FlashCardEdit
 });

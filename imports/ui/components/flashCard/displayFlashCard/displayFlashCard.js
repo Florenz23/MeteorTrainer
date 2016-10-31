@@ -6,6 +6,7 @@ import template from './displayFlashCard.html';
 import {FlashCards} from '../../../../api/flashCards';
 import {name as FlashCardsAdd} from '../flashCardAdd/flashCardAdd';
 import {name as FlashCardRemove} from '../flashCardRemove/flashCardRemove';
+import {name as FlashCardEdit} from '../flashCardEdit/flashCardEdit';
 
 class DisplayFlashCard {
     constructor($scope, $reactive, $stateParams) {
@@ -26,34 +27,6 @@ class DisplayFlashCard {
     }
 
 
-    editrow = function ($index) {
-        this.istrue = true;
-        this.$index = $index;
-        angular.copy(this.flashCards[$index], this.editedItem);
-    }
-    closepopup = function () {
-        this.istrue = false;
-
-    }
-    save = function () {
-        this.istrue = false;
-        FlashCards.update({
-            _id: this.editedItem._id
-        }, {
-            $set: {
-                question: this.editedItem.question,
-                answer: this.editedItem.answer,
-            }
-        }, (error) => {
-            if (error) {
-                console.log('Oops, unable to update the fcList...');
-            } else {
-                console.log('Done!');
-                angular.copy(this.editedItem, this.flashCards[this.$index])
-            }
-        });
-    }
-
 }
 
 const name = 'displayFlashCard';
@@ -64,6 +37,7 @@ export default angular.module(name, [
     uiRouter,
     FlashCardsAdd,
     FlashCardRemove,
+    FlashCardEdit,
 ]).component(name, {
     template,
     controllerAs: name,
